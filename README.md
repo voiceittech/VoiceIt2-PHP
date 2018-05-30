@@ -46,7 +46,7 @@ include('VoiceIt2.php');
 ```
 Then initialize a reference with the API Credentials.
 ```php
-$myVoiceIt = new VoiceIt2.new("API_KEY", "API_TOK");
+$myVoiceIt = new VoiceIt2("API_KEY", "API_TOK");
 ```
 
 ### API calls
