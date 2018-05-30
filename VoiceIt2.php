@@ -113,7 +113,7 @@ class VoiceIt2 {
     return curl_exec($crl);
 	}
 
-  public function createFaceEnrollment($userId, $filePath, $doBlinkDetection = true) {
+  public function createFaceEnrollment($userId, $filePath, $doBlinkDetection = false) {
     $crl = curl_init();
     curl_setopt($crl, CURLOPT_URL, $this->BASE_URL.'/enrollments/face');
     curl_setopt($crl, CURLOPT_USERPWD, "$this->api_key:$this->api_token");
@@ -128,7 +128,7 @@ class VoiceIt2 {
     return curl_exec($crl);
 	}
 
-  public function createVideoEnrollment($userId, $contentLanguage, $filePath, $doBlinkDetection = true) {
+  public function createVideoEnrollment($userId, $contentLanguage, $filePath, $doBlinkDetection = false) {
     $crl = curl_init();
     curl_setopt($crl, CURLOPT_URL, $this->BASE_URL.'/enrollments/video');
     curl_setopt($crl, CURLOPT_USERPWD, "$this->api_key:$this->api_token");
@@ -144,7 +144,7 @@ class VoiceIt2 {
     return curl_exec($crl);
 	}
 
-  public function createVideoEnrollmentByUrl($userId, $contentLanguage, $fileUrl, $doBlinkDetection = true) {
+  public function createVideoEnrollmentByUrl($userId, $contentLanguage, $fileUrl, $doBlinkDetection = false) {
     $crl = curl_init();
     curl_setopt($crl, CURLOPT_URL, $this->BASE_URL.'/enrollments/video/byUrl');
     curl_setopt($crl, CURLOPT_USERPWD, "$this->api_key:$this->api_token");
@@ -285,7 +285,7 @@ class VoiceIt2 {
     return curl_exec($crl);
   }
 
-  public function faceVerification($userId, $filePath, $doBlinkDetection = true) {
+  public function faceVerification($userId, $filePath, $doBlinkDetection = false) {
     $crl = curl_init();
     curl_setopt($crl, CURLOPT_URL, $this->BASE_URL.'/verification/face');
     curl_setopt($crl, CURLOPT_USERPWD, "$this->api_key:$this->api_token");
@@ -300,7 +300,7 @@ class VoiceIt2 {
     return curl_exec($crl);
   }
 
-  public function videoVerification($userId, $contentLanguage, $filePath, $doBlinkDetection = true) {
+  public function videoVerification($userId, $contentLanguage, $filePath, $doBlinkDetection = false) {
     $crl = curl_init();
     curl_setopt($crl, CURLOPT_URL, $this->BASE_URL.'/verification/video');
     curl_setopt($crl, CURLOPT_USERPWD, "$this->api_key:$this->api_token");
@@ -316,7 +316,7 @@ class VoiceIt2 {
     return curl_exec($crl);
   }
 
-  public function videoVerificationByUrl($userId, $contentLanguage, $fileUrl, $doBlinkDetection = true) {
+  public function videoVerificationByUrl($userId, $contentLanguage, $fileUrl, $doBlinkDetection = false) {
     $crl = curl_init();
     curl_setopt($crl, CURLOPT_URL, $this->BASE_URL.'/verification/video/byUrl');
     curl_setopt($crl, CURLOPT_USERPWD, "$this->api_key:$this->api_token");
@@ -362,7 +362,7 @@ class VoiceIt2 {
     return curl_exec($crl);
   }
 
-  public function videoIdentification($userId, $contentLanguage, $filePath, $doBlinkDetection = true) {
+  public function videoIdentification($userId, $contentLanguage, $filePath, $doBlinkDetection = false) {
     $crl = curl_init();
     curl_setopt($crl, CURLOPT_URL, $this->BASE_URL.'/identification/video');
     curl_setopt($crl, CURLOPT_USERPWD, "$this->api_key:$this->api_token");
@@ -378,7 +378,7 @@ class VoiceIt2 {
     return curl_exec($crl);
   }
 
-  public function videoIdentificationByUrl($userId, $contentLanguage, $fileUrl, $doBlinkDetection = true) {
+  public function videoIdentificationByUrl($userId, $contentLanguage, $fileUrl, $doBlinkDetection = false) {
     $crl = curl_init();
     curl_setopt($crl, CURLOPT_URL, $this->BASE_URL.'/identification/video/byUrl');
     curl_setopt($crl, CURLOPT_USERPWD, "$this->api_key:$this->api_token");
