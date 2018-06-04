@@ -1,5 +1,5 @@
 {
-    "name": "voiceit/voiceit2-php",
+    "name": "voiceit-php/voiceit2",
     "type": "library",
     "description": "A PHP wrapper for Voiceit's API 2",
     "homepage": "https://github.com/voiceittech/VoiceIt2-PHP",
