@@ -1,5 +1,8 @@
 <?php
 
+
+namespace Voiceit;
+
 class VoiceIt2 {
 
   public $BASE_URL = 'https://api.voiceit.io';
