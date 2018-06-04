@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Voiceit;
+namespace VoiceIt;
 
 class VoiceIt2 {
 
