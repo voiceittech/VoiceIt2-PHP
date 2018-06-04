@@ -1,0 +1,21 @@
+{
+    "name": "voiceit/voiceit2-php",
+    "type": "library",
+    "description": "A PHP wrapper for Voiceit's API 2",
+    "homepage": "https://github.com/voiceittech/VoiceIt2-PHP",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Armaan Bindra",
+            "email": "armaan@voiceit.io"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "VoiceIt\\": "voiceit/"
+        }
+    }
+}
