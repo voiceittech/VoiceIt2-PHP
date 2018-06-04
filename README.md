@@ -40,15 +40,24 @@ Sign up for a free Developer Account at <a href="https://voiceit.io/signup" targ
 
 ### Initialization
 
-First include the wrapper.
+get the wrapper by directly dopwnloading the file and including it;
 ```php
 include('VoiceIt2.php');
 ```
-Then initialize a reference with the API Credentials.
-```php
-$myVoiceIt = new VoiceIt2("API_KEY", "API_TOK");
+Or, use composer to get the package
+```
+composer require voiceit-php/voiceit2
+```
+Make sure to add this at top when using composer 
+```
+require_once 'vendor/autoload.php';
 ```
 
+Then initialize a reference with the API Credentials.
+
+```php
+$myVoiceIt = new VoiceIt\VoiceIt2("API_KEY", "API_TOK");
+```
 ### API calls
 
 ### User API Calls
