@@ -24,9 +24,11 @@ A PHP wrapper for VoiceIt's new API2.0 featuring Voice + Face Verification and I
       * [Get All Enrollments for User](#get-all-enrollments-for-user)
       * [Delete Enrollment for User](#delete-enrollment-for-user)
       * [Create Audio Enrollment](#create-voice-enrollment)
+      * [Create Face Enrollment](#create-face-enrollment)
       * [Create Video Enrollment](#create-video-enrollment)
   * [Verification API Calls](#verification-api-calls)
-      * [Audio Verification](#voice-verification)
+      * [Voice Verification](#voice-verification)
+      * [Face Verification] (#face-verification)
       * [Video Verification](#video-verification)
   * [Identification API Calls](#identification-api-calls)
       * [Audio Identification](#voice-identification)
@@ -176,6 +178,12 @@ Create audio enrollment for user with given userId(begins with 'usr_') and conte
 $myVoiceIt->createVoiceEnrollment("USER_ID_HERE", "CONTENT_LANGUAGE_HERE", "FILE_PATH");
 ```
 
+#### Create Face Enrollment
+
+'''php
+$myVoiceIt->createFaceEnrollment("USER_ID_HERE", "FILE_PATH";)
+'''
+
 #### Create Video Enrollment
 
 Create video enrollment for user with given userId(begins with 'usr_') and contentLanguage('en-US','es-ES' etc.). Note: File recording need to be no less than 1.2 seconds and no more than 5 seconds
@@ -193,6 +201,10 @@ Verify user with the given userId(begins with 'usr_') and contentLanguage('en-US
 ```php
 $myVoiceIt->voiceVerification("USER_ID_HERE", "CONTENT_LANGUAGE_HERE",  "FILE_PATH");
 ```
+#### Face Verification
+'''
+$myVoiceIt->faceVerification("USER_IS_HERE", "FILE_PATH");
+'''
 
 #### Video Verification
 
