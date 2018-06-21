@@ -40,7 +40,7 @@ Sign up for a free Developer Account at <a href="https://voiceit.io/signup" targ
 
 ### Initialization
 
-Get the wrapper by directly dopwnloading the file and including it;
+Get the wrapper by directly downloading the file and including it;
 ```php
 include('VoiceIt2.php');
 ```
