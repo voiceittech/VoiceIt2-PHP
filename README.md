@@ -3,7 +3,7 @@
 A PHP wrapper for VoiceIt's new API2.0 featuring Voice + Face Verification and Identification.
 
 * [Getting Started](#getting-started)
-* [Installation](#installation)
+* [Initialization](#initialization)
 * [API Calls](#api-calls)
   * [Initialization](#initialization)
   * [User API Calls](#user-api-calls)
@@ -28,7 +28,7 @@ A PHP wrapper for VoiceIt's new API2.0 featuring Voice + Face Verification and I
       * [Create Video Enrollment](#create-video-enrollment)
   * [Verification API Calls](#verification-api-calls)
       * [Voice Verification](#voice-verification)
-      * [Face Verification] (#face-verification)
+      * [Face Verification](#face-verification)
       * [Video Verification](#video-verification)
   * [Identification API Calls](#identification-api-calls)
       * [Audio Identification](#voice-identification)
