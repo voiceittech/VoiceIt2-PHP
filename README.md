@@ -1,6 +1,6 @@
 # VoiceIt2-PHP
 
-A PHP wrapper for VoiceIt's new API2.0 featuring Voice + Face Verification and Identification.
+A PHP wrapper for VoiceIt's new API 2.0 featuring Voice + Face Verification and Identification.
 
 * [Getting Started](#getting-started)
 * [Initialization](#initialization)
