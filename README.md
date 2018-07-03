@@ -1,3 +1,5 @@
+<img src="./php.png" width="100%" style="width:100%" />
+
 # VoiceIt2-PHP
 
 A PHP wrapper for VoiceIt's API 2.0 featuring Voice + Face Verification and Identification.
