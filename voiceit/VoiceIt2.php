@@ -32,7 +32,7 @@ class VoiceIt2 {
     return curl_exec($crl);
   }
 
-  public function getUser($userId) {
+  public function checkUserExists($userId) {
     $crl = curl_init();
     curl_setopt($crl, CURLOPT_URL, $this->BASE_URL.'/users/'.$userId);
     curl_setopt($crl, CURLOPT_USERPWD, "$this->api_key:$this->api_token");
