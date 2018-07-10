@@ -165,7 +165,7 @@ class VoiceIt2 {
 
   public function deleteFaceEnrollment($userId, $faceEnrollmentId) {
     $crl = curl_init();
-    curl_setopt($crl, CURLOPT_URL, $this->BASE_URL.'/enrollments/face/'.$userId.'/'.$faceEnrollmentId);
+    curl_setopt($crl, CURLOPT_URL, $this->BASE_URL.'/enrollments/face/'.$userId.'/'.strval($faceEnrollmentId));
     curl_setopt($crl, CURLOPT_USERPWD, "$this->api_key:$this->api_token");
     curl_setopt($crl, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($crl, CURLOPT_CUSTOMREQUEST, 'DELETE');
@@ -174,7 +174,7 @@ class VoiceIt2 {
 
   public function deleteEnrollmentForUser($userId, $enrollmentId) {
     $crl = curl_init();
-    curl_setopt($crl, CURLOPT_URL, $this->BASE_URL.'/enrollments/'.$userId.'/'.$enrollmentId);
+    curl_setopt($crl, CURLOPT_URL, $this->BASE_URL.'/enrollments/'.$userId.'/'.strval($enrollmentId));
     curl_setopt($crl, CURLOPT_USERPWD, "$this->api_key:$this->api_token");
     curl_setopt($crl, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($crl, CURLOPT_CUSTOMREQUEST, 'DELETE');
