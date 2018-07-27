@@ -1,8 +1,6 @@
 <?php
 
-
 namespace VoiceIt;
-
 class VoiceIt2 {
 
   public $BASE_URL = 'https://api.voiceit.io';
@@ -39,7 +37,7 @@ class VoiceIt2 {
     $crl = curl_init();
     curl_setopt($crl, CURLOPT_URL, $this->BASE_URL.'/users/'.$userId);
     curl_setopt($crl, CURLOPT_USERPWD, "$this->api_key:$this->api_token");
-    curl_setopt($crl, CURLOPT_HTTPHEADER, array('platformId: '.$this->platformId)); 
+    curl_setopt($crl, CURLOPT_HTTPHEADER, array('platformId: '.$this->platformId));
     curl_setopt($crl, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($crl, CURLOPT_CUSTOMREQUEST, 'GET');
     return curl_exec($crl);
@@ -105,7 +103,7 @@ class VoiceIt2 {
     $fields = [
       'userId' => $userId,
       'contentLanguage' => $contentLanguage,
-      'recording' => new CurlFile($filePath)
+      'recording' => curl_file_create($filePath)
     ];
     curl_setopt($crl, CURLOPT_POSTFIELDS, $fields);
     return curl_exec($crl);
@@ -137,7 +135,7 @@ class VoiceIt2 {
     $fields = [
       'userId' => $userId,
       'doBlinkDetection' => $doBlinkDetection ? 1 : 0,
-      'video' => new CurlFile($filePath)
+      'video' => curl_file_create(($filePath)
     ];
     curl_setopt($crl, CURLOPT_POSTFIELDS, $fields);
     return curl_exec($crl);
@@ -154,7 +152,7 @@ class VoiceIt2 {
       'userId' => $userId,
       'contentLanguage' => $contentLanguage,
       'doBlinkDetection' => $doBlinkDetection ? 1 : 0,
-      'video' => new CurlFile($filePath)
+      'video' => curl_file_create(($filePath)
     ];
     curl_setopt($crl, CURLOPT_POSTFIELDS, $fields);
     return curl_exec($crl);
@@ -291,7 +289,7 @@ class VoiceIt2 {
     $fields = [
       'userId' => $userId,
       'contentLanguage' => $contentLanguage,
-      'recording' => new CurlFile($filePath)
+      'recording' => curl_file_create(($filePath)
     ];
     curl_setopt($crl, CURLOPT_POSTFIELDS, $fields);
     return curl_exec($crl);
@@ -323,7 +321,7 @@ class VoiceIt2 {
     $fields = [
       'userId' => $userId,
       'doBlinkDetection' => $doBlinkDetection ? 1 : 0,
-      'video' => new CurlFile($filePath)
+      'video' => curl_file_create(($filePath)
     ];
     curl_setopt($crl, CURLOPT_POSTFIELDS, $fields);
     return curl_exec($crl);
@@ -340,7 +338,7 @@ class VoiceIt2 {
       'userId' => $userId,
       'contentLanguage' => $contentLanguage,
       'doBlinkDetection' => $doBlinkDetection ? 1 : 0,
-      'video' => new CurlFile($filePath)
+      'video' => curl_file_create(($filePath)
     ];
     curl_setopt($crl, CURLOPT_POSTFIELDS, $fields);
     return curl_exec($crl);
@@ -373,7 +371,7 @@ class VoiceIt2 {
     $fields = [
       'userId' => $userId,
       'contentLanguage' => $contentLanguage,
-      'recording' => new CurlFile($filePath)
+      'recording' => curl_file_create(($filePath)
     ];
     curl_setopt($crl, CURLOPT_POSTFIELDS, $fields);
     return curl_exec($crl);
@@ -406,7 +404,7 @@ class VoiceIt2 {
       'userId' => $userId,
       'contentLanguage' => $contentLanguage,
       'doBlinkDetection' => $doBlinkDetection ? 1 : 0,
-      'video' => new CurlFile($filePath)
+      'video' => curl_file_create(($filePath)
     ];
     curl_setopt($crl, CURLOPT_POSTFIELDS, $fields);
     return curl_exec($crl);
