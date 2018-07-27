@@ -135,7 +135,7 @@ class VoiceIt2 {
     $fields = [
       'userId' => $userId,
       'doBlinkDetection' => $doBlinkDetection ? 1 : 0,
-      'video' => curl_file_create(($filePath)
+      'video' => curl_file_create($filePath)
     ];
     curl_setopt($crl, CURLOPT_POSTFIELDS, $fields);
     return curl_exec($crl);
@@ -152,7 +152,7 @@ class VoiceIt2 {
       'userId' => $userId,
       'contentLanguage' => $contentLanguage,
       'doBlinkDetection' => $doBlinkDetection ? 1 : 0,
-      'video' => curl_file_create(($filePath)
+      'video' => curl_file_create($filePath)
     ];
     curl_setopt($crl, CURLOPT_POSTFIELDS, $fields);
     return curl_exec($crl);
@@ -289,7 +289,7 @@ class VoiceIt2 {
     $fields = [
       'userId' => $userId,
       'contentLanguage' => $contentLanguage,
-      'recording' => curl_file_create(($filePath)
+      'recording' => curl_file_create($filePath)
     ];
     curl_setopt($crl, CURLOPT_POSTFIELDS, $fields);
     return curl_exec($crl);
@@ -321,7 +321,7 @@ class VoiceIt2 {
     $fields = [
       'userId' => $userId,
       'doBlinkDetection' => $doBlinkDetection ? 1 : 0,
-      'video' => curl_file_create(($filePath)
+      'video' => curl_file_create($filePath)
     ];
     curl_setopt($crl, CURLOPT_POSTFIELDS, $fields);
     return curl_exec($crl);
@@ -338,7 +338,7 @@ class VoiceIt2 {
       'userId' => $userId,
       'contentLanguage' => $contentLanguage,
       'doBlinkDetection' => $doBlinkDetection ? 1 : 0,
-      'video' => curl_file_create(($filePath)
+      'video' => curl_file_create($filePath)
     ];
     curl_setopt($crl, CURLOPT_POSTFIELDS, $fields);
     return curl_exec($crl);
@@ -371,7 +371,7 @@ class VoiceIt2 {
     $fields = [
       'userId' => $userId,
       'contentLanguage' => $contentLanguage,
-      'recording' => curl_file_create(($filePath)
+      'recording' => curl_file_create($filePath)
     ];
     curl_setopt($crl, CURLOPT_POSTFIELDS, $fields);
     return curl_exec($crl);
@@ -404,7 +404,7 @@ class VoiceIt2 {
       'userId' => $userId,
       'contentLanguage' => $contentLanguage,
       'doBlinkDetection' => $doBlinkDetection ? 1 : 0,
-      'video' => curl_file_create(($filePath)
+      'video' => curl_file_create($filePath)
     ];
     curl_setopt($crl, CURLOPT_POSTFIELDS, $fields);
     return curl_exec($crl);
