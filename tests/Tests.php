@@ -15,8 +15,8 @@ function AssertGreaterThan($arg1, $arg2, $line) {
   }
 }
 
-$viapikey = $_ENV["VIAPIKEY"];
-$viapitoken = $_ENV["VIAPITOKEN"];
+$viapikey = getenv("VIAPIKEY");
+$viapitoken = getenv("VIAPITOKEN");
 $myVoiceIt = new VoiceIt\VoiceIt2($viapikey, $viapitoken);
 
 // TEST BASICS
