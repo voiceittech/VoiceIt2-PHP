@@ -127,13 +127,13 @@ $myVoiceIt->addUserToGroup($groupId, $userId2);
 
 // Create Video Enrollments
 
-// file_put_contents("./videoEnrollmentArmaan1.mov", fopen("https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/videoEnrollmentArmaan1.mov", 'r'));
-// file_put_contents("./videoEnrollmentArmaan2.mov", fopen("https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/videoEnrollmentArmaan2.mov", 'r'));
-// file_put_contents("./videoEnrollmentArmaan3.mov", fopen("https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/videoEnrollmentArmaan3.mov", 'r'));
-// file_put_contents("./videoVerificationArmaan1.mov", fopen("https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/videoVerificationArmaan1.mov", 'r'));
-// file_put_contents("./videoEnrollmentStephen1.mov", fopen("https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/videoEnrollmentStephen1.mov", 'r'));
-// file_put_contents("./videoEnrollmentStephen2.mov", fopen("https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/videoEnrollmentStephen2.mov", 'r'));
-// file_put_contents("./videoEnrollmentStephen3.mov", fopen("https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/videoEnrollmentStephen3.mov", 'r'));
+file_put_contents("./videoEnrollmentArmaan1.mov", fopen("https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/videoEnrollmentArmaan1.mov", 'r'));
+file_put_contents("./videoEnrollmentArmaan2.mov", fopen("https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/videoEnrollmentArmaan2.mov", 'r'));
+file_put_contents("./videoEnrollmentArmaan3.mov", fopen("https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/videoEnrollmentArmaan3.mov", 'r'));
+file_put_contents("./videoVerificationArmaan1.mov", fopen("https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/videoVerificationArmaan1.mov", 'r'));
+file_put_contents("./videoEnrollmentStephen1.mov", fopen("https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/videoEnrollmentStephen1.mov", 'r'));
+file_put_contents("./videoEnrollmentStephen2.mov", fopen("https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/videoEnrollmentStephen2.mov", 'r'));
+file_put_contents("./videoEnrollmentStephen3.mov", fopen("https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/videoEnrollmentStephen3.mov", 'r'));
 
 $ret = json_decode($myVoiceIt->createVideoEnrollment($userId1, "en-US", "./videoEnrollmentArmaan1.mov"));
 $status = $ret ->{"status"};
@@ -305,13 +305,13 @@ $myVoiceIt->addUserToGroup($groupId, $userId1);
 $myVoiceIt->addUserToGroup($groupId, $userId2);
 
 // Create Voice Enrollments
-// file_put_contents("./enrollmentArmaan1.wav", fopen("https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/enrollmentArmaan1.wav", 'r'));
-// file_put_contents("./enrollmentArmaan2.wav", fopen("https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/enrollmentArmaan2.wav", 'r'));
-// file_put_contents("./enrollmentArmaan3.wav", fopen("https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/enrollmentArmaan3.wav", 'r'));
-// file_put_contents("./verificationArmaan1.wav", fopen("https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/verificationArmaan1.wav", 'r'));
-// file_put_contents("./enrollmentStephen1.wav", fopen("https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/enrollmentStephen1.wav", 'r'));
-// file_put_contents("./enrollmentStephen2.wav", fopen("https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/enrollmentStephen2.wav", 'r'));
-// file_put_contents("./enrollmentStephen3.wav", fopen("https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/enrollmentStephen3.wav", 'r'));
+file_put_contents("./enrollmentArmaan1.wav", fopen("https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/enrollmentArmaan1.wav", 'r'));
+file_put_contents("./enrollmentArmaan2.wav", fopen("https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/enrollmentArmaan2.wav", 'r'));
+file_put_contents("./enrollmentArmaan3.wav", fopen("https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/enrollmentArmaan3.wav", 'r'));
+file_put_contents("./verificationArmaan1.wav", fopen("https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/verificationArmaan1.wav", 'r'));
+file_put_contents("./enrollmentStephen1.wav", fopen("https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/enrollmentStephen1.wav", 'r'));
+file_put_contents("./enrollmentStephen2.wav", fopen("https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/enrollmentStephen2.wav", 'r'));
+file_put_contents("./enrollmentStephen3.wav", fopen("https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/enrollmentStephen3.wav", 'r'));
 
 $ret = json_decode($myVoiceIt->createVoiceEnrollment($userId1, "en-US", "./enrollmentArmaan1.wav"));
 $status = $ret ->{"status"};
@@ -447,10 +447,10 @@ $ret = json_decode($myVoiceIt->createUser());
 $userId = $ret ->{"userId"};
 
 // Create Face Enrollments
-// file_put_contents("./faceEnrollmentArmaan1.mp4", fopen("https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/faceEnrollmentArmaan1.mp4", 'r'));
-// file_put_contents("./faceEnrollmentArmaan2.mp4", fopen("https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/faceEnrollmentArmaan2.mp4", 'r'));
-// file_put_contents("./faceEnrollmentArmaan3.mp4", fopen("https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/faceEnrollmentArmaan3.mp4", 'r'));
-// file_put_contents("./faceVerificationArmaan1.mp4", fopen("https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/faceVerificationArmaan1.mp4", 'r'));
+file_put_contents("./faceEnrollmentArmaan1.mp4", fopen("https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/faceEnrollmentArmaan1.mp4", 'r'));
+file_put_contents("./faceEnrollmentArmaan2.mp4", fopen("https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/faceEnrollmentArmaan2.mp4", 'r'));
+file_put_contents("./faceEnrollmentArmaan3.mp4", fopen("https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/faceEnrollmentArmaan3.mp4", 'r'));
+file_put_contents("./faceVerificationArmaan1.mp4", fopen("https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/faceVerificationArmaan1.mp4", 'r'));
 
 $ret = json_decode($myVoiceIt->createFaceEnrollment($userId, "./faceEnrollmentArmaan1.mp4"));
 $status = $ret ->{"status"};
