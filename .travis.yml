@@ -1,7 +1,6 @@
 if: branch = master
 language: php
 php:
-- 5.6
 - 7.0
 script: cd tests && php Tests.php
 after_success:
