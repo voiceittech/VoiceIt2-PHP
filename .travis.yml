@@ -4,7 +4,7 @@ php:
 - 5.4
 - 5.6
 - 7.0
-script: cd tests && php Tests.php
+script: echo $VIAPIKEY && echo $VIAPITOKEN && cd tests && php Tests.php
 notifications:
   slack:
     secure: ZRJNi0XNfYmHRw4DSN1KCTSyKyOH0bvw2od4BYfoJQv8GmVp3CFm955yIwGu+AEMw7SZSabGyWzdFSpNnpaMUsmGgoxIE7DLlmjkf9oibzVt4h22HpHZzBZ2Qm7dzs3ebmQmL63sAO0bmgGlW20EJ2rp+fyHKHqkFRkYzQemdXKgkth6QUKcE2Ij4dubhoGBNZtoTD7P+dg7bz+ShqClqp9YgI5rNvXM+RtxeDtQ2iYLBLcJ9zCHWRXx0osQbRmg1OyQDgyakt+NJ03x6aR+2LX7qx2qqLxfbru8+E6/YbtM/jWs6cced0jLGu/FWGQDvukzk0m5GPW50JbRnpLR2Y0QGBUDTDF2+cVponzU/b2QgTIDmBxPokwJlF6hXuEC52yqW87hN29/RV9EC+ZgpBw5h4t8o5mouinksBaGiCVNzlkgvk82vfgR7ohDQ9iYM69TYZf6Y4o+P3u5jS+enlQVeXIq0o1js99M7GG80z4Qw9vClRd8SnWdhKnFo7b4LLP6JlgbOAZCTVZrRtFDz7mUzgyBVDU09QhhR0pQHlcK4TtKCjrEH+7u5ExFNvv/8m6H75ReejC0qTJtl5emdOTk14enfs0PJ98a/L9SHBroJq7R1wYp+IT0wTwngE/MkOqHVCoCPN+LjXrpDkFsJOFa+IfDKnyvN65M0AB5s2w=
