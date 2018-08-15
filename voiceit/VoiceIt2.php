@@ -169,7 +169,7 @@ class VoiceIt2 {
       'userId' => $userId,
       'contentLanguage' => $contentLanguage,
       'doBlinkDetection' => $doBlinkDetection ? 1 : 0,
-      'video' => $fileUrl
+      'fileUrl' => $fileUrl
     ];
     curl_setopt($crl, CURLOPT_POSTFIELDS, $fields);
     return curl_exec($crl);
@@ -305,7 +305,7 @@ class VoiceIt2 {
     $fields = [
       'userId' => $userId,
       'contentLanguage' => $contentLanguage,
-      'recording' => $fileUrl
+      'fileUrl' => $fileUrl
     ];
     curl_setopt($crl, CURLOPT_POSTFIELDS, $fields);
     return curl_exec($crl);
@@ -355,7 +355,7 @@ class VoiceIt2 {
       'userId' => $userId,
       'contentLanguage' => $contentLanguage,
       'doBlinkDetection' => $doBlinkDetection ? 1 : 0,
-      'video' => $fileUrl
+      'fileUrl' => $fileUrl
     ];
     curl_setopt($crl, CURLOPT_POSTFIELDS, $fields);
     return curl_exec($crl);
@@ -387,7 +387,7 @@ class VoiceIt2 {
     $fields = [
       'groupId' => $groupId,
       'contentLanguage' => $contentLanguage,
-      'recording' => $fileUrl
+      'fileUrl' => $fileUrl
     ];
     curl_setopt($crl, CURLOPT_POSTFIELDS, $fields);
     return curl_exec($crl);
@@ -421,7 +421,7 @@ class VoiceIt2 {
       'groupId' => $groupId,
       'contentLanguage' => $contentLanguage,
       'doBlinkDetection' => $doBlinkDetection ? 1 : 0,
-      'video' => $fileUrl
+      'fileUrl' => $fileUrl
     ];
     curl_setopt($crl, CURLOPT_POSTFIELDS, $fields);
     return curl_exec($crl);
