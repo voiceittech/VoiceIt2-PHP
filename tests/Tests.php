@@ -19,7 +19,7 @@ $viapikey = getenv("VIAPIKEY");
 $viapitoken = getenv("VIAPITOKEN");
 $myVoiceIt = new VoiceIt\VoiceIt2($viapikey, $viapitoken);
 
-// TEST BASICS
+// ****TEST BASICS****
 // Create User
 $ret = json_decode($myVoiceIt->createUser());
 $status = $ret ->{"status"};
@@ -115,7 +115,7 @@ AssertEqual("SUCC", $responseCode, __LINE__);
 print "****Basic Tests All Passed****\n";
 
 
-// TEST VIDEO
+// ****TEST VIDEO****
 $ret = json_decode($myVoiceIt->createUser());
 $userId1 = $ret ->{"userId"};
 $ret = json_decode($myVoiceIt->createUser());
@@ -294,7 +294,7 @@ $myVoiceIt->deleteGroup($groupId);
 
 print "****Video Tests All Passed****\n";
 
-// TEST VOICE
+// ****TEST VOICE****
 $ret = json_decode($myVoiceIt->createUser());
 $userId1 = $ret ->{"userId"};
 $ret = json_decode($myVoiceIt->createUser());
@@ -442,7 +442,7 @@ $myVoiceIt->deleteGroup($groupId);
 
 print "****Voice Tests All Passed****\n";
 
-// TEST FACE
+// ****TEST FACE****
 $ret = json_decode($myVoiceIt->createUser());
 $userId = $ret ->{"userId"};
 
