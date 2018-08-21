@@ -1,7 +1,7 @@
 if: branch = master
 language: php
 php:
-- 7.0
+  - 7.0
 script: cd tests && php Tests.php
 after_success:
   - ./packagist.sh
