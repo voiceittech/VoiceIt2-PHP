@@ -22,8 +22,10 @@ function AssertGreaterThan($arg1, $arg2, $line) {
   }
 }
 
-$viapikey = getenv("VIAPIKEY");
-$viapitoken = getenv("VIAPITOKEN");
+// $viapikey = getenv("VIAPIKEY");
+// $viapitoken = getenv("VIAPITOKEN");
+$viapikey = "key_f3a9fb29944a4e4180d4c98e7f03c713";
+$viapitoken = "tok_be57cbfb92ae4e139f94843468095502";
 $myVoiceIt = new VoiceIt\VoiceIt2($viapikey, $viapitoken);
 $phrase = "Never forget tomorrow is a new day";
 
@@ -130,9 +132,18 @@ $responseCode = $ret ->{"responseCode"};
 AssertEqual("SUCC", $responseCode, __LINE__);
 print "****Basic Tests All Passed****\n";
 
-// Check file doesn't exists
+// Check file doesn't exist
 try {
-  $ret = json_decode($myVoiceIt->createVideoEnrollment("", "", "", "fake_file"));
+  json_decode($myVoiceIt->createVideoEnrollment("", "", "", "fake_file"));
+  json_decode($myVoiceIt->createVoiceEnrollment("", "", "", "fake_file"));
+  json_decode($myVoiceIt->createFaceEnrollment("", "fake_file"));
+  json_decode($myVoiceIt->voiceVerification("", "", "", "fake_file"));
+  json_decode($myVoiceIt->faceVerification("", "fake_file"));
+  json_decode($myVoiceIt->videoVerification("", "", "", "fake_file"));
+  json_decode($myVoiceIt->voiceIdentification("", "", "", "fake_file"));
+  json_decode($myVoiceIt->faceIdentification("", "fake_file"));
+  json_decode($myVoiceIt->videoIdentification("", "", "", "fake_file"));
+
   AssertTrue(False);
 } catch (Exception $e) {
   AssertEqual($e->getMessage(), "File fake_file does not exist", __LINE__);
