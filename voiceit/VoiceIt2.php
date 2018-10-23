@@ -154,7 +154,7 @@ class VoiceIt2 {
     return curl_exec($crl);
 	}
 
-  public function createFaceEnrollment($userId, $filePath, $doBlinkDetection = false) {
+  public function createFaceEnrollment($userId, $filePath) {
     $this->checkFileExists($filePath);
     $crl = curl_init();
     curl_setopt($crl, CURLOPT_URL, $this->BASE_URL.'/enrollments/face');
@@ -164,14 +164,13 @@ class VoiceIt2 {
     curl_setopt($crl, CURLOPT_CUSTOMREQUEST, 'POST');
     $fields = [
       'userId' => $userId,
-      'doBlinkDetection' => $doBlinkDetection ? 1 : 0,
       'video' => curl_file_create($filePath)
     ];
     curl_setopt($crl, CURLOPT_POSTFIELDS, $fields);
     return curl_exec($crl);
 	}
 
-  public function createFaceEnrollmentByUrl($userId, $fileUrl, $doBlinkDetection = false) {
+  public function createFaceEnrollmentByUrl($userId, $fileUrl) {
     $crl = curl_init();
     curl_setopt($crl, CURLOPT_URL, $this->BASE_URL.'/enrollments/face/byUrl');
     curl_setopt($crl, CURLOPT_USERPWD, "$this->api_key:$this->api_token");
@@ -180,14 +179,13 @@ class VoiceIt2 {
     curl_setopt($crl, CURLOPT_CUSTOMREQUEST, 'POST');
     $fields = [
       'userId' => $userId,
-      'doBlinkDetection' => $doBlinkDetection ? 1 : 0,
       'fileUrl' => $fileUrl
     ];
     curl_setopt($crl, CURLOPT_POSTFIELDS, $fields);
     return curl_exec($crl);
 	}
 
-  public function createVideoEnrollment($userId, $contentLanguage, $phrase, $filePath, $doBlinkDetection = false) {
+  public function createVideoEnrollment($userId, $contentLanguage, $phrase, $filePath) {
     $this->checkFileExists($filePath);
     $crl = curl_init();
     curl_setopt($crl, CURLOPT_URL, $this->BASE_URL.'/enrollments/video');
@@ -199,14 +197,13 @@ class VoiceIt2 {
       'userId' => $userId,
       'contentLanguage' => $contentLanguage,
       'phrase' => $phrase,
-      'doBlinkDetection' => $doBlinkDetection ? 1 : 0,
       'video' => curl_file_create($filePath)
     ];
     curl_setopt($crl, CURLOPT_POSTFIELDS, $fields);
     return curl_exec($crl);
 	}
 
-  public function createVideoEnrollmentByUrl($userId, $contentLanguage, $phrase, $fileUrl, $doBlinkDetection = false) {
+  public function createVideoEnrollmentByUrl($userId, $contentLanguage, $phrase, $fileUrl) {
     $crl = curl_init();
     curl_setopt($crl, CURLOPT_URL, $this->BASE_URL.'/enrollments/video/byUrl');
     curl_setopt($crl, CURLOPT_USERPWD, "$this->api_key:$this->api_token");
@@ -217,7 +214,6 @@ class VoiceIt2 {
       'userId' => $userId,
       'contentLanguage' => $contentLanguage,
       'phrase' => $phrase,
-      'doBlinkDetection' => $doBlinkDetection ? 1 : 0,
       'fileUrl' => $fileUrl
     ];
     curl_setopt($crl, CURLOPT_POSTFIELDS, $fields);
@@ -403,7 +399,7 @@ class VoiceIt2 {
     return curl_exec($crl);
   }
 
-  public function faceVerification($userId, $filePath, $doBlinkDetection = false) {
+  public function faceVerification($userId, $filePath) {
     $this->checkFileExists($filePath);
     $crl = curl_init();
     curl_setopt($crl, CURLOPT_URL, $this->BASE_URL.'/verification/face');
@@ -413,14 +409,13 @@ class VoiceIt2 {
     curl_setopt($crl, CURLOPT_CUSTOMREQUEST, 'POST');
     $fields = [
       'userId' => $userId,
-      'doBlinkDetection' => $doBlinkDetection ? 1 : 0,
       'video' => curl_file_create($filePath)
     ];
     curl_setopt($crl, CURLOPT_POSTFIELDS, $fields);
     return curl_exec($crl);
   }
 
-  public function faceVerificationByUrl($userId, $fileUrl, $doBlinkDetection = false) {
+  public function faceVerificationByUrl($userId, $fileUrl) {
     $crl = curl_init();
     curl_setopt($crl, CURLOPT_URL, $this->BASE_URL.'/verification/face/byUrl');
     curl_setopt($crl, CURLOPT_USERPWD, "$this->api_key:$this->api_token");
@@ -429,14 +424,13 @@ class VoiceIt2 {
     curl_setopt($crl, CURLOPT_CUSTOMREQUEST, 'POST');
     $fields = [
       'userId' => $userId,
-      'doBlinkDetection' => $doBlinkDetection ? 1 : 0,
       'fileUrl' => $fileUrl
     ];
     curl_setopt($crl, CURLOPT_POSTFIELDS, $fields);
     return curl_exec($crl);
   }
 
-  public function videoVerification($userId, $contentLanguage, $phrase, $filePath, $doBlinkDetection = false) {
+  public function videoVerification($userId, $contentLanguage, $phrase, $filePath) {
     $this->checkFileExists($filePath);
     $crl = curl_init();
     curl_setopt($crl, CURLOPT_URL, $this->BASE_URL.'/verification/video');
@@ -448,14 +442,13 @@ class VoiceIt2 {
       'userId' => $userId,
       'contentLanguage' => $contentLanguage,
       'phrase' => $phrase,
-      'doBlinkDetection' => $doBlinkDetection ? 1 : 0,
       'video' => curl_file_create($filePath)
     ];
     curl_setopt($crl, CURLOPT_POSTFIELDS, $fields);
     return curl_exec($crl);
   }
 
-  public function videoVerificationByUrl($userId, $contentLanguage, $phrase, $fileUrl, $doBlinkDetection = false) {
+  public function videoVerificationByUrl($userId, $contentLanguage, $phrase, $fileUrl) {
     $crl = curl_init();
     curl_setopt($crl, CURLOPT_URL, $this->BASE_URL.'/verification/video/byUrl');
     curl_setopt($crl, CURLOPT_USERPWD, "$this->api_key:$this->api_token");
@@ -466,7 +459,6 @@ class VoiceIt2 {
       'userId' => $userId,
       'contentLanguage' => $contentLanguage,
       'phrase' => $phrase,
-      'doBlinkDetection' => $doBlinkDetection ? 1 : 0,
       'fileUrl' => $fileUrl
     ];
     curl_setopt($crl, CURLOPT_POSTFIELDS, $fields);
@@ -508,7 +500,7 @@ class VoiceIt2 {
     return curl_exec($crl);
   }
 
-  public function faceIdentification($groupId, $filePath, $doBlinkDetection = false) {
+  public function faceIdentification($groupId, $filePath) {
     $this->checkFileExists($filePath);
     $crl = curl_init();
     curl_setopt($crl, CURLOPT_URL, $this->BASE_URL.'/identification/face');
@@ -518,14 +510,13 @@ class VoiceIt2 {
     curl_setopt($crl, CURLOPT_CUSTOMREQUEST, 'POST');
     $fields = [
       'groupId' => $groupId,
-      'doBlinkDetection' => $doBlinkDetection ? 1 : 0,
       'video' => curl_file_create($filePath)
     ];
     curl_setopt($crl, CURLOPT_POSTFIELDS, $fields);
     return curl_exec($crl);
   }
 
-  public function faceIdentificationByUrl($groupId, $fileUrl, $doBlinkDetection = false) {
+  public function faceIdentificationByUrl($groupId, $fileUrl) {
     $crl = curl_init();
     curl_setopt($crl, CURLOPT_URL, $this->BASE_URL.'/identification/face/byUrl');
     curl_setopt($crl, CURLOPT_USERPWD, "$this->api_key:$this->api_token");
@@ -534,14 +525,13 @@ class VoiceIt2 {
     curl_setopt($crl, CURLOPT_CUSTOMREQUEST, 'POST');
     $fields = [
       'groupId' => $groupId,
-      'doBlinkDetection' => $doBlinkDetection ? 1 : 0,
       'fileUrl' => $fileUrl
     ];
     curl_setopt($crl, CURLOPT_POSTFIELDS, $fields);
     return curl_exec($crl);
   }
 
-  public function videoIdentification($groupId, $contentLanguage, $phrase, $filePath, $doBlinkDetection = false) {
+  public function videoIdentification($groupId, $contentLanguage, $phrase, $filePath) {
     $this->checkFileExists($filePath);
     $crl = curl_init();
     curl_setopt($crl, CURLOPT_URL, $this->BASE_URL.'/identification/video');
@@ -553,14 +543,13 @@ class VoiceIt2 {
       'groupId' => $groupId,
       'contentLanguage' => $contentLanguage,
       'phrase' => $phrase,
-      'doBlinkDetection' => $doBlinkDetection ? 1 : 0,
       'video' => curl_file_create($filePath)
     ];
     curl_setopt($crl, CURLOPT_POSTFIELDS, $fields);
     return curl_exec($crl);
   }
 
-  public function videoIdentificationByUrl($groupId, $contentLanguage, $phrase, $fileUrl, $doBlinkDetection = false) {
+  public function videoIdentificationByUrl($groupId, $contentLanguage, $phrase, $fileUrl) {
     $crl = curl_init();
     curl_setopt($crl, CURLOPT_URL, $this->BASE_URL.'/identification/video/byUrl');
     curl_setopt($crl, CURLOPT_USERPWD, "$this->api_key:$this->api_token");
@@ -571,7 +560,6 @@ class VoiceIt2 {
       'groupId' => $groupId,
       'contentLanguage' => $contentLanguage,
       'phrase' => $phrase,
-      'doBlinkDetection' => $doBlinkDetection ? 1 : 0,
       'fileUrl' => $fileUrl
     ];
     curl_setopt($crl, CURLOPT_POSTFIELDS, $fields);

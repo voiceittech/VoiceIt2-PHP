@@ -22,10 +22,8 @@ function AssertGreaterThan($arg1, $arg2, $line) {
   }
 }
 
-// $viapikey = getenv("VIAPIKEY");
-// $viapitoken = getenv("VIAPITOKEN");
-$viapikey = "key_f3a9fb29944a4e4180d4c98e7f03c713";
-$viapitoken = "tok_be57cbfb92ae4e139f94843468095502";
+$viapikey = getenv("VIAPIKEY");
+$viapitoken = getenv("VIAPITOKEN");
 $myVoiceIt = new VoiceIt\VoiceIt2($viapikey, $viapitoken);
 $phrase = "Never forget tomorrow is a new day";
 
