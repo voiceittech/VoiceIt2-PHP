@@ -115,6 +115,13 @@ AssertEqual(200, $status, __LINE__);
 $responseCode = $ret ->{"responseCode"};
 AssertEqual("SUCC", $responseCode, __LINE__);
 
+// Create User Token
+$ret = json_decode($myVoiceIt->createUserToken($userId));
+$status = $ret ->{"status"};
+AssertEqual(201, $status, __LINE__);
+$responseCode = $ret ->{"responseCode"};
+AssertEqual("SUCC", $responseCode, __LINE__);
+
 // Delete User
 $ret = json_decode($myVoiceIt->deleteUser($userId));
 $status = $ret ->{"status"};
@@ -338,29 +345,29 @@ $myVoiceIt->addUserToGroup($groupId, $userId1);
 $myVoiceIt->addUserToGroup($groupId, $userId2);
 
 // Create Voice Enrollments
-file_put_contents("./enrollmentArmaan1.wav", fopen("https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/enrollmentArmaan1.wav", 'r'));
-file_put_contents("./enrollmentArmaan2.wav", fopen("https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/enrollmentArmaan2.wav", 'r'));
-file_put_contents("./enrollmentArmaan3.wav", fopen("https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/enrollmentArmaan3.wav", 'r'));
-file_put_contents("./verificationArmaan1.wav", fopen("https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/verificationArmaan1.wav", 'r'));
+file_put_contents("./enrollmentNoel1.wav", fopen("https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/enrollmentNoel1.wav", 'r'));
+file_put_contents("./enrollmentNoel2.wav", fopen("https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/enrollmentNoel2.wav", 'r'));
+file_put_contents("./enrollmentNoel3.wav", fopen("https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/enrollmentNoel3.wav", 'r'));
+file_put_contents("./verificationNoel1.wav", fopen("https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/verificationNoel1.wav", 'r'));
 file_put_contents("./enrollmentStephen1.wav", fopen("https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/enrollmentStephen1.wav", 'r'));
 file_put_contents("./enrollmentStephen2.wav", fopen("https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/enrollmentStephen2.wav", 'r'));
 file_put_contents("./enrollmentStephen3.wav", fopen("https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/enrollmentStephen3.wav", 'r'));
 
-$ret = json_decode($myVoiceIt->createVoiceEnrollment($userId1, "en-US", $phrase, "./enrollmentArmaan1.wav"));
+$ret = json_decode($myVoiceIt->createVoiceEnrollment($userId1, "en-US", $phrase, "./enrollmentNoel1.wav"));
 $status = $ret ->{"status"};
 AssertEqual(201, $status, __LINE__);
 $responseCode = $ret ->{"responseCode"};
 AssertEqual("SUCC", $responseCode, __LINE__);
 $enrollmentId1 = $ret ->{"id"};
 
-$ret = json_decode($myVoiceIt->createVoiceEnrollment($userId1, "en-US", $phrase, "./enrollmentArmaan2.wav"));
+$ret = json_decode($myVoiceIt->createVoiceEnrollment($userId1, "en-US", $phrase, "./enrollmentNoel2.wav"));
 $status = $ret ->{"status"};
 AssertEqual(201, $status, __LINE__);
 $responseCode = $ret ->{"responseCode"};
 AssertEqual("SUCC", $responseCode, __LINE__);
 $enrollmentId2 = $ret ->{"id"};
 
-$ret = json_decode($myVoiceIt->createVoiceEnrollment($userId1, "en-US", $phrase, "./enrollmentArmaan3.wav"));
+$ret = json_decode($myVoiceIt->createVoiceEnrollment($userId1, "en-US", $phrase, "./enrollmentNoel3.wav"));
 $status = $ret ->{"status"};
 AssertEqual(201, $status, __LINE__);
 $responseCode = $ret ->{"responseCode"};
@@ -386,14 +393,14 @@ $responseCode = $ret ->{"responseCode"};
 AssertEqual("SUCC", $responseCode, __LINE__);
 
 // Voice Verification
-$ret = json_decode($myVoiceIt->voiceVerification($userId1, "en-US", $phrase, "./verificationArmaan1.wav"));
+$ret = json_decode($myVoiceIt->voiceVerification($userId1, "en-US", $phrase, "./verificationNoel1.wav"));
 $status = $ret ->{"status"};
 AssertEqual(200, $status, __LINE__);
 $responseCode = $ret ->{"responseCode"};
 AssertEqual("SUCC", $responseCode, __LINE__);
 
 // Voice Identification
-$ret = json_decode($myVoiceIt->voiceIdentification($groupId, "en-US", $phrase, "./verificationArmaan1.wav"));
+$ret = json_decode($myVoiceIt->voiceIdentification($groupId, "en-US", $phrase, "./verificationNoel1.wav"));
 $status = $ret ->{"status"};
 AssertEqual(200, $status, __LINE__);
 $responseCode = $ret ->{"responseCode"};
@@ -437,19 +444,19 @@ $myVoiceIt->addUserToGroup($groupId, $userId1);
 $myVoiceIt->addUserToGroup($groupId, $userId2);
 
 // Create Voice Enrollments By URL
-$ret = json_decode($myVoiceIt->createVoiceEnrollmentByUrl($userId1, "en-US", $phrase, "https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/enrollmentArmaan1.wav"));
+$ret = json_decode($myVoiceIt->createVoiceEnrollmentByUrl($userId1, "en-US", $phrase, "https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/enrollmentNoel1.wav"));
 $status = $ret ->{"status"};
 AssertEqual(201, $status, __LINE__);
 $responseCode = $ret ->{"responseCode"};
 AssertEqual("SUCC", $responseCode, __LINE__);
 
-$ret = json_decode($myVoiceIt->createVoiceEnrollmentByUrl($userId1, "en-US", $phrase, "https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/enrollmentArmaan2.wav"));
+$ret = json_decode($myVoiceIt->createVoiceEnrollmentByUrl($userId1, "en-US", $phrase, "https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/enrollmentNoel2.wav"));
 $status = $ret ->{"status"};
 AssertEqual(201, $status, __LINE__);
 $responseCode = $ret ->{"responseCode"};
 AssertEqual("SUCC", $responseCode, __LINE__);
 
-$ret = json_decode($myVoiceIt->createVoiceEnrollmentByUrl($userId1, "en-US", $phrase, "https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/enrollmentArmaan3.wav"));
+$ret = json_decode($myVoiceIt->createVoiceEnrollmentByUrl($userId1, "en-US", $phrase, "https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/enrollmentNoel3.wav"));
 $status = $ret ->{"status"};
 AssertEqual(201, $status, __LINE__);
 $responseCode = $ret ->{"responseCode"};
@@ -474,14 +481,14 @@ $responseCode = $ret ->{"responseCode"};
 AssertEqual("SUCC", $responseCode, __LINE__);
 
 // Voice Verification By URL
-$ret = json_decode($myVoiceIt->voiceVerificationByUrl($userId1, "en-US", $phrase, "https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/verificationArmaan1.wav"));
+$ret = json_decode($myVoiceIt->voiceVerificationByUrl($userId1, "en-US", $phrase, "https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/verificationNoel1.wav"));
 $status = $ret ->{"status"};
 AssertEqual(200, $status, __LINE__);
 $responseCode = $ret ->{"responseCode"};
 AssertEqual("SUCC", $responseCode, __LINE__);
 
 // Voice Identification By URL
-$ret = json_decode($myVoiceIt->voiceIdentificationByUrl($groupId, "en-US", $phrase, "https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/verificationArmaan1.wav"));
+$ret = json_decode($myVoiceIt->voiceIdentificationByUrl($groupId, "en-US", $phrase, "https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/verificationNoel1.wav"));
 $status = $ret ->{"status"};
 AssertEqual(200, $status, __LINE__);
 $responseCode = $ret ->{"responseCode"};
@@ -695,10 +702,10 @@ unlink("./videoVerificationArmaan1.mov");
 unlink("./videoEnrollmentStephen1.mov");
 unlink("./videoEnrollmentStephen2.mov");
 unlink("./videoEnrollmentStephen3.mov");
-unlink("./enrollmentArmaan1.wav");
-unlink("./enrollmentArmaan2.wav");
-unlink("./enrollmentArmaan3.wav");
-unlink("./verificationArmaan1.wav");
+unlink("./enrollmentNoel1.wav");
+unlink("./enrollmentNoel2.wav");
+unlink("./enrollmentNoel3.wav");
+unlink("./verificationNoel1.wav");
 unlink("./enrollmentStephen1.wav");
 unlink("./enrollmentStephen2.wav");
 unlink("./enrollmentStephen3.wav");

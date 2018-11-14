@@ -566,5 +566,16 @@ class VoiceIt2 {
     return curl_exec($crl);
   }
 
+
+  public function createUserToken($userId) {
+    $crl = curl_init();
+    curl_setopt($crl, CURLOPT_URL, $this->BASE_URL.'/users/'.$userId.'/token');
+    curl_setopt($crl, CURLOPT_USERPWD, "$this->api_key:$this->api_token");
+    curl_setopt($crl, CURLOPT_HTTPHEADER, array('platformId: '.$this->platformId));
+    curl_setopt($crl, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($crl, CURLOPT_CUSTOMREQUEST, 'POST');
+    return curl_exec($crl);
+  }
+
 }
 ?>
