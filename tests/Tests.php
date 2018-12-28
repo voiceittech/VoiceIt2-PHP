@@ -27,6 +27,13 @@ $viapitoken = getenv("VIAPITOKEN");
 $myVoiceIt = new VoiceIt\VoiceIt2($viapikey, $viapitoken);
 $phrase = "Never forget tomorrow is a new day";
 
+// ****TEST WEBHOOKS****
+$myVoiceIt->addNotificationUrl("https://voiceit.io");
+AssertEqual("?notificationURL=https%3A%2F%2Fvoiceit.io", $myVoiceIt->getNotificationUrl(), __LINE__);
+$myVoiceIt->removeNotificationUrl();
+AssertEqual("", $myVoiceIt->getNotificationUrl(), __LINE__);
+print "****Webhook Tests All Passed****\n";
+
 // ****TEST BASICS****
 
 // Get All Phrases
