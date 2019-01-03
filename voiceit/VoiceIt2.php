@@ -580,9 +580,13 @@ class VoiceIt2 {
   }
 
 
-  public function createUserToken($userId) {
+  public function createUserToken($userId, $timeOut) {
     $crl = curl_init();
-    curl_setopt($crl, CURLOPT_URL, $this->BASE_URL.'/users/'.$userId.'/token'.$this->notification_url);
+    if ($this->notification_url ==  '') {
+      curl_setopt($crl, CURLOPT_URL, $this->BASE_URL.'/users/'.$userId.'/token?timeOut='.strval($timeOut));
+    } else {
+      curl_setopt($crl, CURLOPT_URL, $this->BASE_URL.'/users/'.$userId.'/token'.$this->notification_url.'&timeOut='.strval($timeOut));
+    }
     curl_setopt($crl, CURLOPT_USERPWD, "$this->api_key:$this->api_token");
     curl_setopt($crl, CURLOPT_HTTPHEADER, array('platformId: '.$this->platformId));
     curl_setopt($crl, CURLOPT_RETURNTRANSFER, true);

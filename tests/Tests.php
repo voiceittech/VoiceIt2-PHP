@@ -123,7 +123,7 @@ $responseCode = $ret ->{"responseCode"};
 AssertEqual("SUCC", $responseCode, __LINE__);
 
 // Create User Token
-$ret = json_decode($myVoiceIt->createUserToken($userId));
+$ret = json_decode($myVoiceIt->createUserToken($userId, 5));
 $status = $ret ->{"status"};
 AssertEqual(201, $status, __LINE__);
 $responseCode = $ret ->{"responseCode"};
