@@ -4,7 +4,7 @@ php:
   - 7.0
 script: cd tests && php Tests.php
 after_success:
-  - ./packagist.sh
+  - ./release.sh
   - ./email.sh
 notifications:
   slack:
