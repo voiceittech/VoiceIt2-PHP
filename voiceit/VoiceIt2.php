@@ -585,9 +585,9 @@ class VoiceIt2 {
   }
 
 
-  public function createUserToken($userId, $timeOut) {
+  public function createUserToken($userId, $secondsToTimeout) {
     $crl = curl_init();
-    curl_setopt($crl, CURLOPT_URL, $this->BASE_URL.'/users/'.$userId.'/token?timeOut='.strval($timeOut));
+    curl_setopt($crl, CURLOPT_URL, $this->BASE_URL.'/users/'.$userId.'/token?timeOut='.strval($secondsToTimeout));
     curl_setopt($crl, CURLOPT_USERPWD, "$this->api_key:$this->api_token");
     curl_setopt($crl, CURLOPT_HTTPHEADER, array('platformId: '.$this->platformId, 'platformVersion: '.$this->VERSION));
     curl_setopt($crl, CURLOPT_RETURNTRANSFER, true);
