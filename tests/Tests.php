@@ -133,6 +133,13 @@ AssertEqual(201, $status, __LINE__);
 $responseCode = $ret ->{"responseCode"};
 AssertEqual("SUCC", $responseCode, __LINE__);
 
+// Expire User Tokens
+$ret = json_decode($myVoiceIt->expireUserTokens($userId));
+$status = $ret ->{"status"};
+AssertEqual(201, $status, __LINE__);
+$responseCode = $ret ->{"responseCode"};
+AssertEqual("SUCC", $responseCode, __LINE__);
+
 // Delete User
 $ret = json_decode($myVoiceIt->deleteUser($userId));
 $status = $ret ->{"status"};

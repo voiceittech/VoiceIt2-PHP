@@ -595,5 +595,15 @@ class VoiceIt2 {
     return curl_exec($crl);
   }
 
+  public function expireUserTokens($userId) {
+    $crl = curl_init();
+    curl_setopt($crl, CURLOPT_URL, VoiceIt2::BASE_URL.'/users/'.$userId.'/expireTokens');
+    curl_setopt($crl, CURLOPT_USERPWD, "$this->api_key:$this->api_token");
+    curl_setopt($crl, CURLOPT_HTTPHEADER, array('platformId: '.$this->platformId, 'platformVersion: '.VoiceIt2::VERSION));
+    curl_setopt($crl, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($crl, CURLOPT_CUSTOMREQUEST, 'POST');
+    return curl_exec($crl);
+  }
+
 }
 ?>
