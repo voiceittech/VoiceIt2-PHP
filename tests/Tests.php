@@ -248,34 +248,9 @@ AssertEqual("SUCC", $responseCode, __LINE__);
 $userId = $ret ->{"userId"};
 AssertEqual($userId1, $userId, __LINE__);
 
-// Delete Enrollments individually
-$ret = json_decode($myVoiceIt->deleteVideoEnrollment($userId1, $enrollmentId1));
-$status = $ret ->{"status"};
-AssertEqual(200, $status, __LINE__);
-$responseCode = $ret ->{"responseCode"};
-AssertEqual("SUCC", $responseCode, __LINE__);
-
-$ret = json_decode($myVoiceIt->deleteVideoEnrollment($userId1, $enrollmentId2));
-$status = $ret ->{"status"};
-AssertEqual(200, $status, __LINE__);
-$responseCode = $ret ->{"responseCode"};
-AssertEqual("SUCC", $responseCode, __LINE__);
-
-$ret = json_decode($myVoiceIt->deleteVideoEnrollment($userId1, $enrollmentId3));
-$status = $ret ->{"status"};
-AssertEqual(200, $status, __LINE__);
-$responseCode = $ret ->{"responseCode"};
-AssertEqual("SUCC", $responseCode, __LINE__);
-
-// Delete All Enrollments for User
-$ret = json_decode($myVoiceIt->deleteAllVideoEnrollments($userId2));
-$status = $ret ->{"status"};
-AssertEqual(200, $status, __LINE__);
-$responseCode = $ret ->{"responseCode"};
-AssertEqual("SUCC", $responseCode, __LINE__);
-
-
 // By URL
+$myVoiceIt->deleteAllEnrollments($userId1);
+$myVoiceIt->deleteAllEnrollments($userId2);
 $myVoiceIt->deleteUser($userId1);
 $myVoiceIt->deleteUser($userId2);
 $myVoiceIt->deleteGroup($groupId);
@@ -426,29 +401,9 @@ AssertEqual("SUCC", $responseCode, __LINE__);
 $userId = $ret ->{"userId"};
 AssertEqual($userId1, $userId, __LINE__);
 
-// Delete Enrollments individually
-$ret = json_decode($myVoiceIt->deleteVoiceEnrollment($userId1, $enrollmentId1));
-$status = $ret ->{"status"};
-AssertEqual(200, $status, __LINE__);
-$responseCode = $ret ->{"responseCode"};
-AssertEqual("SUCC", $responseCode, __LINE__);
-
-$ret = json_decode($myVoiceIt->deleteVoiceEnrollment($userId1, $enrollmentId2));
-$status = $ret ->{"status"};
-AssertEqual(200, $status, __LINE__);
-$responseCode = $ret ->{"responseCode"};
-AssertEqual("SUCC", $responseCode, __LINE__);
-
-$ret = json_decode($myVoiceIt->deleteVoiceEnrollment($userId1, $enrollmentId3));
-$status = $ret ->{"status"};
-AssertEqual(200, $status, __LINE__);
-$responseCode = $ret ->{"responseCode"};
-AssertEqual("SUCC", $responseCode, __LINE__);
-
-// Delete All Enrollments
-$myVoiceIt->deleteAllVoiceEnrollments($userId2);
-
 // By URL
+$myVoiceIt->deleteAllEnrollments($userId1);
+$myVoiceIt->deleteAllEnrollments($userId2);
 $myVoiceIt->deleteUser($userId1);
 $myVoiceIt->deleteUser($userId2);
 $myVoiceIt->deleteGroup($groupId);
@@ -514,8 +469,8 @@ AssertEqual("SUCC", $responseCode, __LINE__);
 $userId = $ret ->{"userId"};
 AssertEqual($userId1, $userId, __LINE__);
 
-$myVoiceIt->deleteAllVoiceEnrollments($userId1);
-$myVoiceIt->deleteAllVoiceEnrollments($userId2);
+$myVoiceIt->deleteAllEnrollments($userId1);
+$myVoiceIt->deleteAllEnrollments($userId2);
 $myVoiceIt->deleteUser($userId1);
 $myVoiceIt->deleteUser($userId2);
 $myVoiceIt->deleteGroup($groupId);
@@ -594,27 +549,8 @@ AssertEqual(200, $status, __LINE__);
 $responseCode = $ret ->{"responseCode"};
 AssertEqual("SUCC", $responseCode, __LINE__);
 
-// Delete Face Enrollments Individually
-$ret = json_decode($myVoiceIt->deleteFaceEnrollment($userId1, $faceEnrollmentId1));
-$status = $ret ->{"status"};
-AssertEqual(200, $status, __LINE__);
-$responseCode = $ret ->{"responseCode"};
-AssertEqual("SUCC", $responseCode, __LINE__);
-
-$ret = json_decode($myVoiceIt->deleteFaceEnrollment($userId1, $faceEnrollmentId2));
-$status = $ret ->{"status"};
-AssertEqual(200, $status, __LINE__);
-$responseCode = $ret ->{"responseCode"};
-AssertEqual("SUCC", $responseCode, __LINE__);
-
-$ret = json_decode($myVoiceIt->deleteFaceEnrollment($userId1, $faceEnrollmentId3));
-$status = $ret ->{"status"};
-AssertEqual(200, $status, __LINE__);
-$responseCode = $ret ->{"responseCode"};
-AssertEqual("SUCC", $responseCode, __LINE__);
-
-$myVoiceIt->deleteAllFaceEnrollments($userId2);
-
+$myVoiceIt->deleteAllEnrollments($userId1);
+$myVoiceIt->deleteAllEnrollments($userId2);
 $myVoiceIt->deleteUser($userId1);
 $myVoiceIt->deleteUser($userId2);
 $myVoiceIt->deleteGroup($groupId);
@@ -685,27 +621,8 @@ AssertEqual(200, $status, __LINE__);
 $responseCode = $ret ->{"responseCode"};
 AssertEqual("SUCC", $responseCode, __LINE__);
 
-// Delete Face Enrollments Individually
-$ret = json_decode($myVoiceIt->deleteFaceEnrollment($userId1, $faceEnrollmentId1));
-$status = $ret ->{"status"};
-AssertEqual(200, $status, __LINE__);
-$responseCode = $ret ->{"responseCode"};
-AssertEqual("SUCC", $responseCode, __LINE__);
-
-$ret = json_decode($myVoiceIt->deleteFaceEnrollment($userId1, $faceEnrollmentId2));
-$status = $ret ->{"status"};
-AssertEqual(200, $status, __LINE__);
-$responseCode = $ret ->{"responseCode"};
-AssertEqual("SUCC", $responseCode, __LINE__);
-
-$ret = json_decode($myVoiceIt->deleteFaceEnrollment($userId1, $faceEnrollmentId3));
-$status = $ret ->{"status"};
-AssertEqual(200, $status, __LINE__);
-$responseCode = $ret ->{"responseCode"};
-AssertEqual("SUCC", $responseCode, __LINE__);
-
-$myVoiceIt->deleteAllFaceEnrollments($userId2);
-
+$myVoiceIt->deleteAllEnrollments($userId1);
+$myVoiceIt->deleteAllEnrollments($userId2);
 $myVoiceIt->deleteUser($userId1);
 $myVoiceIt->deleteUser($userId2);
 $myVoiceIt->deleteGroup($groupId);

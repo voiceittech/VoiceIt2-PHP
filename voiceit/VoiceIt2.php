@@ -4,7 +4,7 @@ namespace VoiceIt;
 class VoiceIt2 {
 
   const BASE_URL = 'https://api.voiceit.io';
-  const VERSION = '3.3.0';
+  const VERSION = '3.4.0';
   public $notification_url = '';
   public $api_key;
   public $api_token;
@@ -237,66 +237,6 @@ class VoiceIt2 {
     curl_setopt($crl, CURLOPT_POSTFIELDS, $fields);
     return curl_exec($crl);
 	}
-
-  public function deleteAllVoiceEnrollments($userId) {
-    $crl = curl_init();
-    curl_setopt($crl, CURLOPT_URL, VoiceIt2::BASE_URL.'/enrollments/'.$userId.'/voice'.$this->notification_url);
-    curl_setopt($crl, CURLOPT_USERPWD, "$this->api_key:$this->api_token");
-    curl_setopt($crl, CURLOPT_HTTPHEADER, array('platformId: '.$this->platformId, 'platformVersion: '.VoiceIt2::VERSION));
-    curl_setopt($crl, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($crl, CURLOPT_CUSTOMREQUEST, 'DELETE');
-    return curl_exec($crl);
-  }
-
-  public function deleteAllFaceEnrollments($userId) {
-    $crl = curl_init();
-    curl_setopt($crl, CURLOPT_URL, VoiceIt2::BASE_URL.'/enrollments/'.$userId.'/face'.$this->notification_url);
-    curl_setopt($crl, CURLOPT_USERPWD, "$this->api_key:$this->api_token");
-    curl_setopt($crl, CURLOPT_HTTPHEADER, array('platformId: '.$this->platformId, 'platformVersion: '.VoiceIt2::VERSION));
-    curl_setopt($crl, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($crl, CURLOPT_CUSTOMREQUEST, 'DELETE');
-    return curl_exec($crl);
-  }
-
-  public function deleteAllVideoEnrollments($userId) {
-    $crl = curl_init();
-    curl_setopt($crl, CURLOPT_URL, VoiceIt2::BASE_URL.'/enrollments/'.$userId.'/video'.$this->notification_url);
-    curl_setopt($crl, CURLOPT_USERPWD, "$this->api_key:$this->api_token");
-    curl_setopt($crl, CURLOPT_HTTPHEADER, array('platformId: '.$this->platformId, 'platformVersion: '.VoiceIt2::VERSION));
-    curl_setopt($crl, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($crl, CURLOPT_CUSTOMREQUEST, 'DELETE');
-    return curl_exec($crl);
-  }
-
-  public function deleteVoiceEnrollment($userId, $enrollmentId) {
-    $crl = curl_init();
-    curl_setopt($crl, CURLOPT_URL, VoiceIt2::BASE_URL.'/enrollments/voice/'.$userId.'/'.strval($enrollmentId).$this->notification_url);
-    curl_setopt($crl, CURLOPT_USERPWD, "$this->api_key:$this->api_token");
-    curl_setopt($crl, CURLOPT_HTTPHEADER, array('platformId: '.$this->platformId, 'platformVersion: '.VoiceIt2::VERSION));
-    curl_setopt($crl, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($crl, CURLOPT_CUSTOMREQUEST, 'DELETE');
-    return curl_exec($crl);
-  }
-
-  public function deleteFaceEnrollment($userId, $faceEnrollmentId) {
-    $crl = curl_init();
-    curl_setopt($crl, CURLOPT_URL, VoiceIt2::BASE_URL.'/enrollments/face/'.$userId.'/'.strval($faceEnrollmentId).$this->notification_url);
-    curl_setopt($crl, CURLOPT_USERPWD, "$this->api_key:$this->api_token");
-    curl_setopt($crl, CURLOPT_HTTPHEADER, array('platformId: '.$this->platformId, 'platformVersion: '.VoiceIt2::VERSION));
-    curl_setopt($crl, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($crl, CURLOPT_CUSTOMREQUEST, 'DELETE');
-    return curl_exec($crl);
-  }
-
-  public function deleteVideoEnrollment($userId, $enrollmentId) {
-    $crl = curl_init();
-    curl_setopt($crl, CURLOPT_URL, VoiceIt2::BASE_URL.'/enrollments/video/'.$userId.'/'.strval($enrollmentId).$this->notification_url);
-    curl_setopt($crl, CURLOPT_USERPWD, "$this->api_key:$this->api_token");
-    curl_setopt($crl, CURLOPT_HTTPHEADER, array('platformId: '.$this->platformId, 'platformVersion: '.VoiceIt2::VERSION));
-    curl_setopt($crl, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($crl, CURLOPT_CUSTOMREQUEST, 'DELETE');
-    return curl_exec($crl);
-  }
 
   public function getAllGroups() {
     $crl = curl_init();
