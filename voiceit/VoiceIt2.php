@@ -4,7 +4,7 @@ namespace VoiceIt;
 class VoiceIt2 {
 
   const BASE_URL = 'https://api.voiceit.io';
-  const VERSION = '3.4.1';
+  const VERSION = '3.5.0';
   public $notification_url = '';
   public $api_key;
   public $api_token;
@@ -542,6 +542,62 @@ class VoiceIt2 {
     curl_setopt($crl, CURLOPT_HTTPHEADER, array('platformId: '.$this->platformId, 'platformVersion: '.VoiceIt2::VERSION));
     curl_setopt($crl, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($crl, CURLOPT_CUSTOMREQUEST, 'POST');
+    return curl_exec($crl);
+  }
+
+  public function createUnmanagedSubAccount($firstName, $lastName, $email, $password, $contentLanguage) {
+    $crl = curl_init();
+    curl_setopt($crl, CURLOPT_URL, VoiceIt2::BASE_URL.'/subaccount/unmanaged'.$this->notification_url);
+    curl_setopt($crl, CURLOPT_USERPWD, "$this->api_key:$this->api_token");
+    curl_setopt($crl, CURLOPT_HTTPHEADER, array('platformId: '.$this->platformId, 'platformVersion: '.VoiceIt2::VERSION));
+    curl_setopt($crl, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($crl, CURLOPT_CUSTOMREQUEST, 'POST');
+    $fields = [
+          'firstName' => $firstName,
+          'lastName' => $lastName,
+          'email' => $email,
+          'password' => $password,
+          'contentLanguage' => $contentLanguage
+        ];
+    curl_setopt($crl, CURLOPT_POSTFIELDS, $fields);
+    return curl_exec($crl);
+  }
+
+  public function createManagedSubAccount($firstName, $lastName, $email, $password, $contentLanguage) {
+    $crl = curl_init();
+    curl_setopt($crl, CURLOPT_URL, VoiceIt2::BASE_URL.'/subaccount/managed'.$this->notification_url);
+    curl_setopt($crl, CURLOPT_USERPWD, "$this->api_key:$this->api_token");
+    curl_setopt($crl, CURLOPT_HTTPHEADER, array('platformId: '.$this->platformId, 'platformVersion: '.VoiceIt2::VERSION));
+    curl_setopt($crl, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($crl, CURLOPT_CUSTOMREQUEST, 'POST');
+    $fields = [
+          'firstName' => $firstName,
+          'lastName' => $lastName,
+          'email' => $email,
+          'password' => $password,
+          'contentLanguage' => $contentLanguage
+        ];
+    curl_setopt($crl, CURLOPT_POSTFIELDS, $fields);
+    return curl_exec($crl);
+  }
+
+  public function regenerateSubAccountAPIToken($subAccountAPIKey) {
+    $crl = curl_init();
+    curl_setopt($crl, CURLOPT_URL, VoiceIt2::BASE_URL.'/subaccount/'.$subAccountAPIKey.$this->notification_url);
+    curl_setopt($crl, CURLOPT_USERPWD, "$this->api_key:$this->api_token");
+    curl_setopt($crl, CURLOPT_HTTPHEADER, array('platformId: '.$this->platformId, 'platformVersion: '.VoiceIt2::VERSION));
+    curl_setopt($crl, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($crl, CURLOPT_CUSTOMREQUEST, 'POST');
+    return curl_exec($crl);
+  }
+
+  public function deleteSubAccount($subAccountAPIKey) {
+    $crl = curl_init();
+    curl_setopt($crl, CURLOPT_URL, VoiceIt2::BASE_URL.'/subaccount/'.$subAccountAPIKey.$this->notification_url);
+    curl_setopt($crl, CURLOPT_USERPWD, "$this->api_key:$this->api_token");
+    curl_setopt($crl, CURLOPT_HTTPHEADER, array('platformId: '.$this->platformId, 'platformVersion: '.VoiceIt2::VERSION));
+    curl_setopt($crl, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($crl, CURLOPT_CUSTOMREQUEST, 'DELETE');
     return curl_exec($crl);
   }
 
