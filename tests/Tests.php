@@ -172,6 +172,44 @@ try {
   AssertEqual($e->getMessage(), "File fake_file does not exist", __LINE__);
 }
 
+// ****TEST BASICS****
+
+$ret = json_decode($myVoiceIt->createUnmanagedSubAccount("test", "php", "", "", ""));
+$status = $ret ->{"status"};
+$message = $ret ->{"message"};
+AssertEqual(201, $status, __LINE__);
+$responseCode = $ret ->{"responseCode"};
+AssertEqual("SUCC", $responseCode, __LINE__);
+$subaccountUnmanagedAPIKey = $ret ->{"apiKey"};
+
+$ret = json_decode($myVoiceIt->createManagedSubAccount("test", "php", "", "", ""));
+$status = $ret ->{"status"};
+$message = $ret ->{"message"};
+AssertEqual(201, $status, __LINE__);
+$responseCode = $ret ->{"responseCode"};
+AssertEqual("SUCC", $responseCode, __LINE__);
+$subaccountManagedAPIKey = $ret ->{"apiKey"};
+
+$ret = json_decode($myVoiceIt->regenerateSubAccountAPIToken($subaccountUnmanagedAPIKey));
+$status = $ret ->{"status"};
+AssertEqual(200, $status, __LINE__);
+$responseCode = $ret ->{"responseCode"};
+AssertEqual("SUCC", $responseCode, __LINE__);
+
+$ret = json_decode($myVoiceIt->deleteSubAccount($subaccountUnmanagedAPIKey));
+$status = $ret ->{"status"};
+AssertEqual(200, $status, __LINE__);
+$responseCode = $ret ->{"responseCode"};
+AssertEqual("SUCC", $responseCode, __LINE__);
+
+$ret = json_decode($myVoiceIt->deleteSubAccount($subaccountManagedAPIKey));
+$status = $ret ->{"status"};
+$message = $ret ->{"message"};
+AssertEqual(200, $status, __LINE__);
+$responseCode = $ret ->{"responseCode"};
+AssertEqual("SUCC", $responseCode, __LINE__);
+
+print "**** Subaccount Tests All Passed ****\n";
 
 // ****TEST VIDEO****
 $ret = json_decode($myVoiceIt->createUser());
