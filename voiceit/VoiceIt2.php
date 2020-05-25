@@ -4,7 +4,7 @@ namespace VoiceIt;
 class VoiceIt2 {
 
   const BASE_URL = 'https://api.voiceit.io';
-  const VERSION = '3.5.0';
+  const VERSION = '3.6.0';
   public $notification_url = '';
   public $api_key;
   public $api_token;
@@ -578,6 +578,16 @@ class VoiceIt2 {
           'contentLanguage' => $contentLanguage
         ];
     curl_setopt($crl, CURLOPT_POSTFIELDS, $fields);
+    return curl_exec($crl);
+  }
+
+  public function switchSubAccountType($firstName) {
+    $crl = curl_init();
+    curl_setopt($crl, CURLOPT_URL, VoiceIt2::BASE_URL.'/subaccount/'.$firstName.'/switchType'.$this->notification_url);
+    curl_setopt($crl, CURLOPT_USERPWD, "$this->api_key:$this->api_token");
+    curl_setopt($crl, CURLOPT_HTTPHEADER, array('platformId: '.$this->platformId, 'platformVersion: '.VoiceIt2::VERSION));
+    curl_setopt($crl, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($crl, CURLOPT_CUSTOMREQUEST, 'POST');
     return curl_exec($crl);
   }
 

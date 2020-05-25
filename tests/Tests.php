@@ -182,6 +182,12 @@ $responseCode = $ret ->{"responseCode"};
 AssertEqual("SUCC", $responseCode, __LINE__);
 $subaccountUnmanagedAPIKey = $ret ->{"apiKey"};
 
+$ret = json_decode($myVoiceIt->switchSubAccountType($subaccountUnmanagedAPIKey));
+$status = $ret ->{"status"};
+AssertEqual(200, $status, __LINE__);
+$responseCode = $ret ->{"responseCode"};
+AssertEqual("SUCC", $responseCode, __LINE__);
+
 $ret = json_decode($myVoiceIt->createManagedSubAccount("test", "php", "", "", ""));
 $status = $ret ->{"status"};
 $message = $ret ->{"message"};
