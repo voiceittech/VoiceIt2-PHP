@@ -1,6 +1,6 @@
 <img src="./php.png" width="100%" style="width:100%" />
 
-# VoiceIt2-PHP [![travisstatus](https://travis-ci.org/voiceittech/VoiceIt2-PHP.svg?branch=master)](https://travis-ci.org/voiceittech/VoiceIt2-PHP)
+# VoiceIt2-PHP [![travisstatus](https://travis-ci.com/voiceittech/VoiceIt2-PHP.svg?branch=master)](https://travis-ci.com/voiceittech/VoiceIt2-PHP)
 
 A PHP wrapper for VoiceIt's API 2.0 featuring Voice + Face Verification and Identification.
 

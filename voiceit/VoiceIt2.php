@@ -4,7 +4,7 @@ namespace VoiceIt;
 class VoiceIt2 {
 
   const BASE_URL = 'https://api.voiceit.io';
-  const VERSION = '3.6.0';
+  const VERSION = '3.6.1';
   public $notification_url = '';
   public $api_key;
   public $api_token;
