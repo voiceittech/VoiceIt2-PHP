@@ -24,7 +24,7 @@ function AssertGreaterThan($arg1, $arg2, $line) {
 
 $viapikey = getenv("VIAPIKEY");
 $viapitoken = getenv("VIAPITOKEN");
-$myVoiceIt = new VoiceIt\VoiceIt2($viapikey, $viapitoken);
+$myVoiceIt = new VoiceIt\VoiceIt2($viapikey, $viapitoken, 'https://api.voiceit.io');
 
 if (getenv("BOXFUSE_ENV") == "voiceittest") {
   file_put_contents(getenv("HOME")."/platformVersion", $myVoiceIt->getVersion());
